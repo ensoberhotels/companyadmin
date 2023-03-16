@@ -271,7 +271,7 @@ input:focus, textarea:focus, select:focus{
          console.log(form);
          jQuery.ajax({
           type: "POST",
-          url: '/company_admin/company-master/update',
+          url: '/company-master/update',
           data: form,
           processData: false,
           contentType: false,
