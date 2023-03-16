@@ -75,10 +75,10 @@ table.dataTable thead .sorting {
 				<div class="col s6">
 					<h4 class="card-title">Property Detail</h4>
 				</div>
-				<div class="col s2 m6 l6" style="text-align: right;">
-					<!-- <a class="mb-6 btn waves-effect waves-light gradient-45deg-purple-deep-orange gradient-shadow">Delete</a> -->
+				<!-- <div class="col s2 m6 l6" style="text-align: right;">
+					<!-- <a class="mb-6 btn waves-effect waves-light gradient-45deg-purple-deep-orange gradient-shadow">Delete</a> 
 					<a href="{{URL::to('/company_admin/property/create')}}" class="btn waves-effect waves-light" style="margin-right: 10px;height: 26px;padding: 6px 6px 6px 6px;background-color: #1cd106;font-size: 12px;line-height: 1;">ADD</a>
-				</div>
+				</div> -->
 			</div>
           <div class="row">
             <div class="col s12">

@@ -243,7 +243,7 @@ input:focus, textarea:focus, select:focus{
          console.log(form);
          jQuery.ajax({
           type: "POST",
-          url: '/company_admin/property/save',
+          url: '/property/save',
           data: form,
           processData: false,
           contentType: false,
@@ -260,7 +260,7 @@ input:focus, textarea:focus, select:focus{
                 position:'topRight'
               });
               setTimeout(function() {
-                location.href='/company_admin/property';
+                location.href='/property';
               }, 5000);
             }else{
               iziToast.error({timeout: 5000,title: 'Required', message: response.msg,position:'topRight'});

@@ -49,7 +49,8 @@ class PropertyController extends Controller
 	
 
 	public function index(){
-		$property=Property::orderBy('id','DESC')->get();
+		$user=session()->get('admin');
+		$property=Property::where('comp_admin_id',$user['id'][0])->orderBy('id','DESC')->get();
 		return view('property.index',compact('property'));
 	}
 	// public function log_Admin(){
@@ -77,29 +78,36 @@ class PropertyController extends Controller
                 return response()->json(['status' => 0, 'msg' => 'Error: '.$validator->errors()->first(), 'data' => '']);
             }
             $user=session()->get('admin');
-            if($request->file('logo')){
-             	$name = time().'_'.$request->file('logo')->getClientOriginalName();   
-             	//dd($name);   
-                $destinationPath = public_path('/asset/property_logo');
-                $request->file('logo')->move($destinationPath, $name);
-            }
-			$post=[
-            	'user'	=>	$request->name,
-            	'password'		=>	$request->password,
-            	'property_image'	=> 	(isset($name) ? $name : ''),
-            	'property_name'	=>	$request->property_name,
-            	'user_type'=>'A',
-            	'comp_admin_id'=>$user['id'][0],
-            ];
-		    $save=Property::insert($post);
-            if($save){
-            	\DB::commit();
-            	//dd($save);
-            	return response()->json(['status' => 1, 'msg' => 'Added Successfully', 'data' => '']);
+            $no_prop=CompanyMaster::where('email',$user['user'][0])->first();
+            $user_prop=Property::where('comp_admin_id',$user['id'][0])->get();
+            if(@count($user_prop) == $no_prop->no_of_user){
+            	return response()->json(['status' => 0, 'msg' => 'You add only one record!', 'data' => '']);
             }else{
-            	\DB::rollback();
-            	return response()->json(['status' => 0, 'msg' => 'Data not save!', 'data' => '']);
+            	if($request->file('logo')){
+	             	$name = time().'_'.$request->file('logo')->getClientOriginalName();   
+	             	//dd($name);   
+	                $destinationPath = public_path('/asset/property_logo');
+	                $request->file('logo')->move($destinationPath, $name);
+	            }
+				$post=[
+	            	'user'	=>	$request->name,
+	            	'password'		=>	$request->password,
+	            	'property_image'	=> 	(isset($name) ? $name : ''),
+	            	'property_name'	=>	$request->property_name,
+	            	'user_type'=>'A',
+	            	'comp_admin_id'=>$user['id'][0],
+	            ];
+			    $save=Property::insert($post);
+	            if($save){
+	            	\DB::commit();
+	            	//dd($save);
+	            	return response()->json(['status' => 1, 'msg' => 'Added Successfully', 'data' => '']);
+	            }else{
+	            	\DB::rollback();
+	            	return response()->json(['status' => 0, 'msg' => 'Data not save!', 'data' => '']);
+	            }
             }
+            
 		}catch(Exception $e){
 			\DB::rollback();
             return response()->json(['status' => 0, 'msg' => $e->getMessage(), 'data' => '']);

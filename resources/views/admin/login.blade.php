@@ -27,7 +27,7 @@
       <div class="col s12">
         <div class="container"><div id="login-page" class="row">
   <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
-    <form class="login-form" action="{{ URL::to('/company_admin/login') }}" method="post">
+    <form class="login-form" action="{{ URL::to('/login') }}" method="post">
       <div class="row">
         <div class="input-field col s8">
           <h5 class="ml-4">Sign In As Admin</h5>
