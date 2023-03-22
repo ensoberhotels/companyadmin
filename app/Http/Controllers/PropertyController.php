@@ -96,6 +96,7 @@ class PropertyController extends Controller
 	            	'property_name'	=>	$request->property_name,
 	            	'user_type'=>'A',
 	            	'comp_admin_id'=>$user['id'][0],
+	            	'comp_id'=>$user['comp_id'][0]
 	            ];
 			    $save=Property::insert($post);
 	            if($save){
