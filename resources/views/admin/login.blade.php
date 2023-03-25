@@ -54,7 +54,7 @@
       </div>
       <div class="row">
         <div class="col s12 m12 l12 ml-2 mt-1">
-          <p>
+          <p> 
             <label> 
               <input type="checkbox" />
               <span>Remember Me</span>
