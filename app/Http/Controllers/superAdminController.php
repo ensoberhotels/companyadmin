@@ -116,7 +116,7 @@ class superAdminController extends Controller
 				$request->session()->push('admin.id', $admin->id);
 				$request->session()->push('admin.comp_id', $admin->comp_id);
 				// dd($request->session());
-				return redirect('company-master/edit');
+				return redirect('/dashboard');
 			}else{
 				return redirect('/');
 			}
