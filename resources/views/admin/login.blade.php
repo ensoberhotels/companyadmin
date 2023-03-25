@@ -56,7 +56,7 @@
         <div class="col s12 m12 l12 ml-2 mt-1">
           <p> 
             <label> 
-              <input type="checkbox" />
+              <input type="checkbox" /> 
               <span>Remember Me</span>
             </label>
             <a href="{{URL::to('/company_admin/forget-password')}}" style="color: blue;float: right;margin-right: -29px;width: 48%;">Forget Password</a>
