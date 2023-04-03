@@ -99,8 +99,8 @@ table.dataTable thead .sorting {
                           <!-- <button class="mb-6 btn-floating waves-effect waves-light gradient-45deg-purple-deep-orange car_delete gradient-shadow" title="Delete" onclick="return confirm('Are you sure?')">
                             <i class="material-icons">delete_sweep</i>
                           </button> /company_admin/log_admin-->
-                          <a href="{{URL::to('/company_admin/log_admin')}}" target="_blank" class="mb-6 btn-floating waves-effect waves-light gradient-45deg-purple-deep-orange car_delete gradient-shadow"><i class="material-icons">login</i></a>
-                          <a href="{{URL::to('/company_admin/property/')}}/{{$propertys->id}}"><button class="mb-6 btn-floating waves-effect waves-light gradient-45deg-green-teal gradient-shadow"><i class="material-icons">brush</i></button></a>
+                          <a href="{{URL::to('/log_admin')}}" target="_blank" class="mb-6 btn-floating waves-effect waves-light gradient-45deg-purple-deep-orange car_delete gradient-shadow"><i class="material-icons">login</i></a>
+                          <a href="{{URL::to('/property/')}}/{{$propertys->id}}"><button class="mb-6 btn-floating waves-effect waves-light gradient-45deg-green-teal gradient-shadow"><i class="material-icons">brush</i></button></a>
                         </div>
                       </div>
                     </div>

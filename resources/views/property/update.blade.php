@@ -248,6 +248,7 @@ input:focus, textarea:focus, select:focus{
 	   <script type="text/javascript">
        function updateData(){
          var form=new FormData(document.getElementById('add_company_form'));
+         jQuery('#po_search_loader1').show();
          console.log(form);
          jQuery.ajax({
           type: "POST",
@@ -257,6 +258,7 @@ input:focus, textarea:focus, select:focus{
           contentType: false,
           dataType: "json",
           success: function(response) {
+            jQuery('#po_search_loader1').hide();
             console.log(response);
             if (response.status == 1) {
               iziToast.success({

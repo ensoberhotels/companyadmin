@@ -106,15 +106,18 @@ class CompanyMasterController extends Controller
 		return view('companymaster.update',compact('record'));	
 	}
 	public function update(Request $request){
-		//dd($request->all());
+		// dd($request->all());
 		\DB::beginTransaction();
 		try{
 			$validator = \Validator::make($request->all(), [ 
             	'company_name'=>'required',
-            	'company_gstin'=>'required',
-            	'company_type'=>'required',
+            	// 'company_type'=>'required',
+            	'company_web'=>'required',
             	'company_mobile'=>'required',
             	'company_email'=>'required',
+            	'company_gstin'=>'required',
+            	'company_add'=>'required',
+            	'company_desc'=>'required',
             ]);
             if ($validator->fails()) { 
                 return response()->json(['status' => 0, 'msg' => 'Error: '.$validator->errors()->first(), 'data' => '']);
@@ -131,7 +134,7 @@ class CompanyMasterController extends Controller
             $post=[
             	'company_name'	=>	$request->company_name,
             	'gstin'			=>	$request->company_gstin,
-            	'company_type'	=>	$request->company_type,
+            	// 'company_type'	=>	$request->company_type,
             	'mobile'		=>	$request->company_mobile,
             	'email'			=>	$request->company_email,
             	'website'		=>	$request->company_web,

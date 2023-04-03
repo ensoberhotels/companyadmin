@@ -250,8 +250,8 @@ input:focus, textarea:focus, select:focus{
           dataType: "json",
           success: function(response) {
             console.log(response);
+            jQuery('#po_search_loader1').hide();
             if (response.status == 1) {
-              jQuery('#po_search_loader1').hide();
               iziToast.success({
                 timeout: 5000, 
                 icon: 'fa fa-chrome', 
