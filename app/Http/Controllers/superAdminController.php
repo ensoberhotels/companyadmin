@@ -176,7 +176,8 @@ class superAdminController extends Controller
 			$user=session()->get('admin');
 			//dd($user);
 			// $username=$user
-			return redirect('http://192.168.119.101:100/admin/dashboard');
+			// return redirect('http://127.0.0.1:1000/admin');
+			return redirect('https://adminoperator.ensober.com/admin');
 		}else{
 			return redirect('/');
 		}
