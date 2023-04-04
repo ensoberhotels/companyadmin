@@ -134,7 +134,7 @@ input:focus, textarea:focus, select:focus{
                             <div class="form-group">
                              <label class="active">Company Logo</label>
                              <input type="file" name="company_logo" value="{{$record->logo}}" id="company_logo" class="form-control">
-                             <a href="{{ asset('asset/company_logo/') }}/{{$record->logo}}" target="_blank"><img src="{{ asset('asset/company_logo/') }}/{{$record->logo}}" height="50" width="50" alt="tag"> </a>
+                             <a href="{{ asset('public/asset/company_logo/') }}/{{$record->logo}}" target="_blank"><img src="{{ asset('public/asset/company_logo/') }}/{{$record->logo}}" height="50" width="50" alt="tag"> </a>
                             </div>
                           </div>
 				                  <div class="col-sm-12 col-md-3">
