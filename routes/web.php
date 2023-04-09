@@ -39,6 +39,7 @@ Route::get('/viewhotel/{id}', 'CommanController@viewHotel');
 
 // Hotel
 
+Route::get('/', 'SuperAdminController@index');
 Route::get('/company_admin', 'SuperAdminController@index');
 Route::get('/company_admin/forget-password', 'SuperAdminController@forgetPassword');
 
