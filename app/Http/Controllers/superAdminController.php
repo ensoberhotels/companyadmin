@@ -40,7 +40,7 @@ use PDF;
 
 use Illuminate\Support\Facades\Session;
 
-class superAdminController extends Controller
+class SuperAdminController extends Controller
 {
 	
 	// public function __construct(){

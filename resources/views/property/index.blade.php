@@ -89,7 +89,7 @@ table.dataTable thead .sorting {
                     <div class="col s12 m3">
                       <div class="hotel_item">
                         <div class="smole_size">
-                          <img src="{{ asset('asset/property_logo/') }}/{{$propertys->property_image}}" style="height: 200px;" class="img-responsive" />
+                          <img src="{{ asset('public/asset/property_logo/') }}/{{$propertys->property_image}}" style="height: 200px;" class="img-responsive" />
                         </div>
                         <lable style="font-size: 13px;float: left;width: 100%;background: linear-gradient(45deg, #828919, #68dfeb) !important;color: #fff;padding: 1px 9px;">{{ $propertys->property_name }}</lable>
                         <!-- <div class="button_area_1" id="hover_log_{{$propertys->id}}">
