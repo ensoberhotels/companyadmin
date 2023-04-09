@@ -114,10 +114,11 @@ class superAdminController extends Controller
 				$request->session()->push('admin.user', $request->user);
 				$request->session()->push('admin.password', $request->password);
 				$request->session()->push('admin.id', $admin->id);
+				$request->session()->push('admin.comp_id', $admin->comp_id);
 				// dd($request->session());
-				return redirect('company_admin/dashboard');
+				return redirect('/company-master/edit');
 			}else{
-				return redirect('company_admin');
+				return redirect('/')->with('Failed', 'Username or password is incorrect');
 			}
 		}catch(Exseption $e){
 			return response()->json(['error' => $e->getMessage()]);
@@ -164,10 +165,9 @@ class superAdminController extends Controller
 	 */
 	public function dashboard(){
 		if (session()->exists('admin')) {
-
 			return view('dashboard');
 		}else{
-			return redirect('company_admin');
+			return redirect('/');
 		}
 	}
 	public function log_Admin(){
@@ -176,9 +176,10 @@ class superAdminController extends Controller
 			$user=session()->get('admin');
 			//dd($user);
 			// $username=$user
-			return redirect('http://192.168.119.101:100/admin/dashboard');
+			// return redirect('http://127.0.0.1:1000/admin');
+			return redirect('https://adminoperator.ensober.com/admin');
 		}else{
-			return redirect('company_admin');
+			return redirect('/');
 		}
 	}
 	/**
@@ -201,7 +202,7 @@ class superAdminController extends Controller
 	 */
 	public function logout(){
 		session()->flush();
-		return redirect('/company_admin');
+		return redirect('/');
 	}
 
 	/**

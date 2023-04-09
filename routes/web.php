@@ -43,35 +43,21 @@ Route::get('/', 'SuperAdminController@index');
 Route::get('/company_admin', 'SuperAdminController@index');
 Route::get('/company_admin/forget-password', 'SuperAdminController@forgetPassword');
 
-Route::get('/admin/reset-password/{id}', 'SuperAdminController@resetPassword');
-Route::post('/admin/sendMail', 'SuperAdminController@sendMail');
-Route::get('/company_admin/log_admin', 'SuperAdminController@log_Admin');
-Route::post('/company_admin/login', 'SuperAdminController@adminLogin');
+Route::get('/reset-password/{id}', 'SuperAdminController@resetPassword');
+Route::post('/sendMail', 'SuperAdminController@sendMail');
+Route::get('/log_admin', 'SuperAdminController@log_Admin');
+Route::post('/login', 'SuperAdminController@adminLogin');
 
-Route::get('/company_admin/dashboard', 'SuperAdminController@dashboard');
-Route::get('/company_admin/company-master', 'CompanyMasterController@index');
-Route::get('/company_admin/company-master/create', 'CompanyMasterController@create');
-Route::post('/company_admin/company-master/save', 'CompanyMasterController@save');
-Route::get('/company_admin/company-master/edit', 'CompanyMasterController@edit');
-Route::post('/company_admin/company-master/update', 'CompanyMasterController@update');
+Route::get('/dashboard', 'SuperAdminController@dashboard');
+Route::get('/company-master', 'CompanyMasterController@index');
+Route::get('/company-master/edit', 'CompanyMasterController@edit');
+Route::post('/company-master/update', 'CompanyMasterController@update');
 Route::post('/company-master', 'CompanyMasterController@delete');
-Route::get('/company_admin/module-master', 'ModuleMasterController@index');
-Route::get('/module-master/create', 'ModuleMasterController@create');
-Route::post('/company_admin/module-master/save', 'ModuleMasterController@save');
-Route::get('/company_admin/module-master/{id}', 'ModuleMasterController@edit');
-Route::post('/company_admin/module-master/update', 'ModuleMasterController@update');
-Route::post('/company_admin/module-master', 'ModuleMasterController@delete');
-Route::get('/company_admin/menu-master', 'MenuMasterController@index');
-Route::get('/company_admin/menu-master/create', 'MenuMasterController@create');
-Route::post('/company_admin/menu-master/save', 'MenuMasterController@save');
-Route::get('/company_admin/menu-master/{id}', 'MenuMasterController@edit');
-Route::post('/company_admin/menu-master/update', 'MenuMasterController@update');
-Route::post('/company_admin/menu-master', 'MenuMasterController@delete');
-Route::get('/company_admin/property', 'PropertyController@index');
-Route::get('/company_admin/property/create', 'PropertyController@create');
-Route::post('/company_admin/property/save', 'PropertyController@save');
-Route::get('/company_admin/property/{id}', 'PropertyController@edit');
-Route::post('/company_admin/property/update', 'PropertyController@update');
+Route::get('/property', 'PropertyController@index');
+Route::get('/property/create', 'PropertyController@create');
+Route::post('/property/save', 'PropertyController@save');
+Route::get('/property/{id}', 'PropertyController@edit');
+Route::post('/property/update', 'PropertyController@update');
 // clear cache
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('config:cache');

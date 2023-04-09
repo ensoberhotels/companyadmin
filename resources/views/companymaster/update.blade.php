@@ -134,7 +134,7 @@ input:focus, textarea:focus, select:focus{
                             <div class="form-group">
                              <label class="active">Company Logo</label>
                              <input type="file" name="company_logo" value="{{$record->logo}}" id="company_logo" class="form-control">
-                             <a href="{{ asset('asset/company_logo/') }}/{{$record->logo}}" target="_blank"><img src="{{ asset('asset/company_logo/') }}/{{$record->logo}}" height="50" width="50" alt="tag"> </a>
+                             <a href="{{ asset('public/asset/company_logo/') }}/{{$record->logo}}" target="_blank"><img src="{{ asset('public/asset/company_logo/') }}/{{$record->logo}}" height="50" width="50" alt="tag"> </a>
                             </div>
                           </div>
 				                  <div class="col-sm-12 col-md-3">
@@ -159,21 +159,26 @@ input:focus, textarea:focus, select:focus{
                           </div>
                           <div class="col-sm-12 col-md-3">
                             <div class="form-group">
+                             <label class="active">Company GSTIn</label>
+                             <input type="text" value="{{$record->gstin}}" name="company_gstin" id="company_gstin" class="form-control"> 
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-md-3">
+                            <div class="form-group">
                              <label class="active">Company Address</label>
                              <input type="text" name="company_add" value="{{@$record->address}}" id="company_add" class="form-control"> 
                              <input type="hidden" name="id" value="{{@$record->id}}" id="id" class="form-control"> 
                             </div>
                           </div>
-
+                        </div>
+                        <div class="row">
                           <div class="col-sm-12 col-md-6">
                             <div class="form-group">
                              <label class="active">Company Description</label>
                              <textarea type="text" value="{{$record->description}}" name="company_desc" id="company_desc" class="form-control"> {{$record->description}}</textarea>
                             </div>
                           </div>
-                        </div>
-                        <div class="row">
-                          
+                        
                           <div class=" col-sm-12 col-md-3" style="width: 25%;">
                             <img src="/asset/images/btn_loader.gif" id="po_search_loader1" class="input_loader po_search_loader" style="display: none; position: unset;width: 25px;height: 25px;text-align: left;float: left;margin-left: -27px;margin-right: 10px;margin-top: 3px;">
                             <button class="btn waves-effect waves-light left" type="button" onclick="updateData()" name="action" id="add_hotel" style="margin-right: 10px;height: 26px;padding: 4px 3px;background-color: #127623;font-size: 12px;line-height: 1;">Update
@@ -266,14 +271,14 @@ input:focus, textarea:focus, select:focus{
          console.log(form);
          jQuery.ajax({
           type: "POST",
-          url: '/company_admin/company-master/update',
+          url: '/company-master/update',
           data: form,
           processData: false,
           contentType: false,
           dataType: "json",
           success: function(response) {
             console.log(response);
-            jQuery('#po_search_loader1').show();
+            jQuery('#po_search_loader1').hide();
             if (response.status == 1) {
               iziToast.success({
                 timeout: 5000, 

@@ -27,7 +27,7 @@
       <div class="col s12">
         <div class="container"><div id="login-page" class="row">
   <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
-    <form class="login-form" action="{{ URL::to('/company_admin/login') }}" method="post">
+    <form class="login-form" action="{{ URL::to('/login') }}" method="post">
       <div class="row">
         <div class="input-field col s8">
           <h5 class="ml-4">Sign In As Admin</h5>
@@ -52,21 +52,22 @@
           <label for="password">Password</label>
         </div>
       </div>
+      <span id="Massage" style="color: red;" min-height="10px" max-height="10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@if(Session::has('Failed')){{Session::get('Failed')}}@endif</span>
       <div class="row">
         <div class="col s12 m12 l12 ml-2 mt-1">
-          <p>
-            <label>
-              <input type="checkbox" />
+          <p>  
+            <label> 
+              <input type="checkbox" /> 
               <span>Remember Me</span>
             </label>
+            <a href="{{URL::to('/company_admin/forget-password')}}" style="color: blue;float: right;margin-right: -29px;width: 48%;">Forget Password</a>
           </p>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s12" style="text-align: center !important">
 			<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-          <button type="submit" class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s6" style="margin-right: 7px;width: 48%;">Login</button>
-          <a href="{{URL::to('/company_admin/forget-password')}}" class="btn waves-effect border-round btn-primary col s6" style="background-color: #303f9f;margin-left: 7px;width: 48%;">Forget Password</a>
+          <button type="submit" class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s6" style="float: none !important;">Login</button>
         </div>
       </div>
       <!--<div class="row">

@@ -155,7 +155,7 @@ input:focus, textarea:focus, select:focus{
                               <button class="btn waves-effect waves-light left" type="button" onclick="saveData()" name="action" id="add_hotel" style="margin-right: 10px;height: 26px;padding: 4px 3px;background-color: #127623;font-size: 12px;line-height: 1;">Save
                                 <!-- <i class="material-icons right">send</i> -->
                               </button>
-                              <a href="{{URL::to('/company_admin/company-privilege')}}" class="btn waves-effect waves-dark" style="background-color: #bfb32b;color: #fff;height: 26px;padding: 6px 4px;font-size: 12px;line-height: 1;">Back</a>
+                              <a href="{{URL::to('/company-privilege')}}" class="btn waves-effect waves-dark" style="background-color: #bfb32b;color: #fff;height: 26px;padding: 6px 4px;font-size: 12px;line-height: 1;">Back</a>
                             </div>
                           </div>
                         </div>
@@ -243,15 +243,15 @@ input:focus, textarea:focus, select:focus{
          console.log(form);
          jQuery.ajax({
           type: "POST",
-          url: '/company_admin/property/save',
+          url: '/property/save',
           data: form,
           processData: false,
           contentType: false,
           dataType: "json",
           success: function(response) {
             console.log(response);
+            jQuery('#po_search_loader1').hide();
             if (response.status == 1) {
-              jQuery('#po_search_loader1').hide();
               iziToast.success({
                 timeout: 5000, 
                 icon: 'fa fa-chrome', 
@@ -260,7 +260,7 @@ input:focus, textarea:focus, select:focus{
                 position:'topRight'
               });
               setTimeout(function() {
-                location.href='/company_admin/property';
+                location.href='/property';
               }, 5000);
             }else{
               iziToast.error({timeout: 5000,title: 'Required', message: response.msg,position:'topRight'});
