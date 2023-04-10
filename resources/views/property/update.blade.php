@@ -137,7 +137,7 @@ input:focus, textarea:focus, select:focus{
                           </div>
                           <div class="col-sm-12 col-md-3">
                             <div class="form-group">
-                              <label class="active">Name</label>
+                              <label class="active">Username</label>
                               <input type="text" name="name" id="name" value="{{$record->user}}" class="form-control">
                             </div>
                           </div>

@@ -160,13 +160,13 @@ input:focus, textarea:focus, select:focus{
                           <div class="col-sm-12 col-md-3">
                             <div class="form-group">
                              <label class="active">Company GSTIn</label>
-                             <input type="text" value="{{$record->gstin}}" name="company_gstin" id="company_gstin" class="form-control"> 
+                             <input type="text" value="{{@$record->gstin}}" name="company_gstin" id="company_gstin" class="form-control"> 
                             </div>
                           </div>
                           <div class="col-sm-12 col-md-3">
                             <div class="form-group">
-                             <label class="active">Company Address</label>
-                             <input type="text" name="company_add" value="{{@$record->address}}" id="company_add" class="form-control"> 
+                             <label class="active">Company Address</label> 
+                             <textarea name="company_add" id="company_add" class="form-control" cols="10" rows="1">{{@$record->address}}</textarea>
                              <input type="hidden" name="id" value="{{@$record->id}}" id="id" class="form-control"> 
                             </div>
                           </div>

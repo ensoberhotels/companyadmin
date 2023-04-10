@@ -47,6 +47,7 @@ Route::get('/reset-password/{id}', 'SuperAdminController@resetPassword');
 Route::post('/sendMail', 'SuperAdminController@sendMail');
 Route::get('/log_admin', 'SuperAdminController@log_Admin');
 Route::post('/login', 'SuperAdminController@adminLogin');
+Route::get('/logout', 'superAdminController@logout');
 
 Route::get('/dashboard', 'SuperAdminController@dashboard');
 Route::get('/company-master', 'CompanyMasterController@index');
