@@ -39,17 +39,17 @@ Route::get('/viewhotel/{id}', 'CommanController@viewHotel');
 
 // Hotel
 
-Route::get('/', 'SuperAdminController@index');
-Route::get('/company_admin', 'SuperAdminController@index');
-Route::get('/company_admin/forget-password', 'SuperAdminController@forgetPassword');
+Route::get('/', 'superAdminController@index');
+Route::get('/company_admin', 'superAdminController@index');
+Route::get('/company_admin/forget-password', 'superAdminController@forgetPassword');
 
-Route::get('/reset-password/{id}', 'SuperAdminController@resetPassword');
-Route::post('/sendMail', 'SuperAdminController@sendMail');
-Route::get('/log_admin', 'SuperAdminController@log_Admin');
-Route::post('/login', 'SuperAdminController@adminLogin');
+Route::get('/reset-password/{id}', 'superAdminController@resetPassword');
+Route::post('/sendMail', 'superAdminController@sendMail');
+Route::get('/log_admin', 'superAdminController@log_Admin');
+Route::post('/login', 'superAdminController@adminLogin');
 Route::get('/logout', 'superAdminController@logout');
 
-Route::get('/dashboard', 'SuperAdminController@dashboard');
+Route::get('/dashboard', 'superAdminController@dashboard');
 Route::get('/company-master', 'CompanyMasterController@index');
 Route::get('/company-master/edit', 'CompanyMasterController@edit');
 Route::post('/company-master/update', 'CompanyMasterController@update');
