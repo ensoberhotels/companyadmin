@@ -132,7 +132,7 @@ input:focus, textarea:focus, select:focus{
                               <label class="active">Property Image</label>
                               <input type="file" name="logo" id="logo" class="form-control">
                               <input type="hidden" name="id" id="id" value="{{$record->id}}" class="form-control">
-                              <img src="{{ asset('asset/property_logo/') }}/{{$record->property_image}}" class="img-responsive" />
+                              <img src="{{ asset('public/asset/property_logo/') }}/{{$record->property_image}}" class="img-responsive" />
                             </div>
                           </div>
                           <div class="col-sm-12 col-md-3">
@@ -153,7 +153,7 @@ input:focus, textarea:focus, select:focus{
                           <div class=" col-sm-12 col-md-3">
                             <label class="active" style="height: 19px;"></label>
                             <div>
-                              <img src="/asset/images/btn_loader.gif" id="po_search_loader1" class="input_loader po_search_loader" style="display: none; position: unset;width: 25px;height: 25px;text-align: left;float: left;margin-left: -27px;margin-right: 10px;margin-top: 3px;">
+                              <img src="{{URL::asset('public/asset/images/btn_loader.gif')}}" id="po_search_loader1" class="input_loader po_search_loader" style="display: none; position: unset;width: 25px;height: 25px;text-align: left;float: left;margin-left: -27px;margin-right: 10px;margin-top: 3px;">
                               <button class="btn waves-effect waves-light left" type="button" onclick="updateData()" name="action" id="add_hotel" style="margin-right: 10px;height: 26px;padding: 4px 3px;background-color: #127623;font-size: 12px;line-height: 1;">Update
                                 <!-- <i class="material-icons right">send</i> -->
                               </button>
