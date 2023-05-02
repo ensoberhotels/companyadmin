@@ -50,10 +50,10 @@ Route::post('/login', 'superAdminController@adminLogin');
 Route::get('/logout', 'superAdminController@logout');
 
 Route::get('/dashboard', 'superAdminController@dashboard');
-Route::get('/company-master', 'CompanyMasterController@index');
+// Route::get('/company-master', 'CompanyMasterController@index');
 Route::get('/company-master/edit', 'CompanyMasterController@edit');
 Route::post('/company-master/update', 'CompanyMasterController@update');
-Route::post('/company-master', 'CompanyMasterController@delete');
+// Route::post('/company-master', 'CompanyMasterController@delete');
 Route::get('/property', 'PropertyController@index');
 Route::get('/property/create', 'PropertyController@create');
 Route::post('/property/save', 'PropertyController@save');

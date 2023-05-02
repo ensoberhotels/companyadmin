@@ -139,7 +139,7 @@ class CompanyMasterController extends Controller
             	'email'			=>	$request->company_email,
             	'website'		=>	$request->company_web,
             	'description'	=>	$request->company_desc,
-            	'logo'			=>	(isset($name) ? $name : ''),
+            	'c_logo'			=>	(isset($name) ? $name : ''),
             	'address'		=>	$request->company_add
             ];
             //dd($post);
