@@ -85,6 +85,7 @@ table.dataTable thead .sorting {
               <div class="card-content">
                 <div class="divider"></div><br>
                 <div class="row" id="hotel_listing">
+                  @if(count($property) > 0)
                   @foreach($property as $propertys)
                     <div class="col s12 m3">
                       <div class="hotel_item">
@@ -105,6 +106,11 @@ table.dataTable thead .sorting {
                       </div>
                     </div>
                   @endforeach
+                  @else
+                    <div class="col s12 m3">
+                      <p>No Property Found!</p>
+                    </div>
+                  @endif
               </div>
             </div>
           </div>

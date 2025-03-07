@@ -155,7 +155,7 @@ input:focus, textarea:focus, select:focus{
                               <button class="btn waves-effect waves-light left" type="button" onclick="saveData()" name="action" id="add_hotel" style="margin-right: 10px;height: 26px;padding: 4px 3px;background-color: #127623;font-size: 12px;line-height: 1;">Save
                                 <!-- <i class="material-icons right">send</i> -->
                               </button>
-                              <a href="{{URL::to('/company-privilege')}}" class="btn waves-effect waves-dark" style="background-color: #bfb32b;color: #fff;height: 26px;padding: 6px 4px;font-size: 12px;line-height: 1;">Back</a>
+                              <a href="{{URL::to('/property')}}" class="btn waves-effect waves-dark" style="background-color: #bfb32b;color: #fff;height: 26px;padding: 6px 4px;font-size: 12px;line-height: 1;">Back</a>
                             </div>
                           </div>
                         </div>
